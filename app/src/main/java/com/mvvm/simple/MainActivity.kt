@@ -43,6 +43,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         if (isInternetConnected())
             viewmodel.callCategoryListApi()
         observerLiveData()
+
     }
 
     private fun observerLiveData() {
