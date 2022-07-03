@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="onSelectSubCategoryItem"
+            type="com.mvvm.simple.ui.adapter.SubCategoryListAdapter.OnSelectSubCategoryItem" />
+
+        <variable
+            name="subCategoryListApiRes"
+            type="com.mvvm.simple.model.SubCategoryListApiRes.Data" />
+
+        <variable
+            name="position"
+            type="Integer" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvMainView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_8sdp"
+        app:cardBackgroundColor="@color/colorWhite"
+        android:onClick="@{()->onSelectSubCategoryItem.onSelectSubCategoryItem(position)}"
+        app:cardCornerRadius="@dimen/_4sdp"
+        app:cardElevation="@dimen/_2sdp">
+
+        <TextView
+            android:id="@+id/tvCategoryName"
+            style="@style/blackRegular12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginVertical="@dimen/_10sdp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{subCategoryListApiRes.subCategoryName}"
+            tools:text="Sub category" />
+
+    </androidx.cardview.widget.CardView>
+
+</layout>
